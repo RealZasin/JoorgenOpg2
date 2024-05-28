@@ -81,8 +81,8 @@ namespace JoorgenOpg2
              * som parametre. Eksempel:  ps( kan AddNumbers bruke 
              * desimaltall? Dersom den ikke kan, hvordan kan man 
              * fikse problemet?)
-        - DU KAN FISKE PROBLEMET MED Å BRUKE FLOAT ELLER DOUBLE ISTEDENFOR
-        */
+            - DU KAN FISKE PROBLEMET MED Å BRUKE FLOAT ELLER DOUBLE ISTEDENFOR
+            */
 
             double MathAdd(double a, double b)
             {
@@ -102,8 +102,13 @@ namespace JoorgenOpg2
             {
                 Console.WriteLine(word);
             }
-            
 
+
+            /*Forsøk å lage et interface, tenk over hvilke metoder 
+             * interface skal inneholde, og implementer dem i en ny klasse.*/
+            
+            MyClass2 myClass2 = new MyClass2();
+            myClass2.MyMethod2();
 
 
 
@@ -115,7 +120,20 @@ namespace JoorgenOpg2
         }
 
 
+        
+        public interface IMyInterface
+        {
+            void MyMethod2();
+        }
 
+        
+        public class MyClass2 : IMyInterface
+        {
+            public void MyMethod2()
+            {
+                Console.WriteLine("MyMethod2 in MyClass2 is called.");
+            }
+        }
 
 
     }
