@@ -112,6 +112,12 @@ namespace JoorgenOpg2
 
 
 
+            double befolkning2025 = WorldPop.BeregnBefolkning(1950, 2.5, 2024, 7.9, 2025);
+            Console.WriteLine("Befolkningen i 2025 vil være omtrent " + befolkning2025 + " milliarder.");
+
+
+
+
             Console.ReadKey();
 
 
@@ -146,7 +152,25 @@ namespace JoorgenOpg2
         MyProperty = value;
         }
 
-
         
+
+            
+           
+
+     }
+
+    public class WorldPop
+    {
+        public static double BeregnBefolkning(int startÅr, double startBefolkning, int sluttÅr, double sluttBefolkning, int målÅr)
+        {
+            // Beregn årlig vekstrate
+            double vekstrate = (sluttBefolkning - startBefolkning) / (sluttÅr - startÅr);
+
+            // Beregn befolkningen i målåret
+            double målBefolkning = startBefolkning + (vekstrate * (målÅr - startÅr));
+
+            return målBefolkning;
+        }
+
     }
 }
